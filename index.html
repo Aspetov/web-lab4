@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация на мероприятия</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <header>
+    <h1>Регистрация на IT-события</h1>
+    <button id="theme-toggle">Тёмная тема</button>
+  </header>
+
+  <main class="container">
+  
+    <section class="events-section">
+      <h2>Выберите мероприятие</h2>
+      <div class="events-grid">
+        <div class="event-card" data-event="Web Design Workshop">
+          <h3>Web Design Workshop</h3>
+          <p class="event-date">15 Октября, 15:00</p>
+          <p class="event-desc">Изучите основы UI/UX дизайна и верстки современности.</p>
+          <button class="select-btn">Выбрать</button>
+        </div>
+
+        <div class="event-card" data-event="JavaScript Quiz">
+          <h3>JavaScript Quiz</h3>
+          <p class="event-date">20 Октября, 18:00</p>
+          <p class="event-desc">Проверьте свои знания JS ES6+ в командном викторине.</p>
+          <button class="select-btn">Выбрать</button>
+        </div>
+
+        <div class="event-card" data-event="IT Career Talk">
+          <h3>IT Career Talk</h3>
+          <p class="event-date">25 Октября, 16:30</p>
+          <p class="event-desc">Встреча с экспертами индустрии и советы по найму.</p>
+          <button class="select-btn">Выбрать</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="form-section">
+      <h2>Форма записи</h2>
+      <form id="registration-form" novalidate>
+        <!-- Выбранное мероприятие -->
+        <div class="form-group">
+          <label>Выбранное событие:</label>
+          <input type="text" id="selected-event-display" readonly placeholder="Выберите мероприятие выше">
+          <input type="hidden" id="selected-event" name="selectedEvent">
+          <span class="error-message" id="event-error"></span>
+        </div>
+
+
+        <div class="form-group">
+          <label for="full-name">ФИО / Имя:</label>
+          <input type="text" id="full-name" placeholder="Введите ваше имя">
+          <div class="char-count">Символов: <span id="char-counter">0</span></div>
+          <span class="error-message" id="name-error"></span>
+        </div>
+
+    
+        <div class="form-group">
+          <label for="email">Электронная почта:</label>
+          <input type="email" id="email" placeholder="example@mail.com">
+          <span class="error-message" id="email-error"></span>
+        </div>
+
+      
+        <div class="form-group">
+          <label for="student-group">Учебная группа:</label>
+          <input type="text" id="student-group" placeholder="Например, CS-201">
+          <span class="error-message" id="group-error"></span>
+        </div>
+
+  
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="agreement">
+            Я согласен с правилами обработки данных
+          </label>
+          <span class="error-message" id="agreement-error"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">Зарегистрироваться</button>
+      </form>
+    </section>
+
+
+    <section class="results-section">
+      <h2>Подтвержденные регистрации</h2>
+      <div id="confirmation-banner" class="hidden"></div>
+      <ul id="registrations-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
